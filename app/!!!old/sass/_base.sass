@@ -1,0 +1,199 @@
+@import "bourbon"
+@import "vars"
+
+//FOOTER BOTTOM BEGIN
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  height: 100%  
+
+.wrapper
+  display: flex
+  flex-direction: column
+  height: 100%
+  margin: 0 auto
+
+.content
+  flex: 1 0 auto
+
+footer
+  flex: 0 0 auto
+  height: 80px
+
+//FOOTER BOTTOM END
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: $font-default
+	overflow-x: hidden
+	 -webkit-font-smoothing: antialiased
+	&.loaded #preloader
+		opacity: 0
+		visibility: hidden
+
+hr
+	border-top-color: black
+
+.text-center
+	text-align: center
+
+/* preloader for first screen */
+body
+	&.loading
+		background: #fff
+		width: 100%
+		height: 100vh
+		overflow: hidden
+		z-index: 999
+		.main_container
+			visibility: hidden
+			opacity: 0
+			-webkit-transition:all .5s .5s ease
+			-moz-transition: all .5s .5s ease
+			transition:all .5s .2s ease	
+
+.post_list	
+	li
+		position: relative
+		background-color: $light-green
+		padding: 15px;
+		margin-bottom: 20px
+		min-height: 160px
+
+
+.post_image
+	position: absolute
+	width: 130px
+	height: 130px
+	img
+		max-height: 100%
+		max-width: 100%
+	a
+		display: block
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		// background-color: $light-green
+
+.post_text
+	margin-left: 150px	
+	.post_exerpt
+		max-height: 50px
+		margin: 0 0 5px 0
+		overflow: hidden	
+
+.readmore
+	display: inline-block
+	vertical-align: top
+	font-size: 14px	
+	padding: 2px 5px
+	margin: 0 0 5px 0	
+	color: #000
+	background-color: $green
+	font-family: $font-headings
+	font-style: italic
+	&:after
+	    content: '→';
+	    padding: 0 5px;
+	&:hover
+		color: #fff
+		text-decoration: none
+		background-color: $dark-green
+
+
+
+.post_data
+	position: absolute
+	left: 165px
+	right: 15px
+	bottom: 10px
+	@include clearfix
+
+.post_meta
+	float: right
+	padding: 5px 0 0 0
+	font-size: 13px
+	.fa
+		color: $color-meta-icons
+
+.post_meta_item
+	padding: 0 0 0 10px
+	&:first-child
+		padding: 0;		
+		
+
+@keyframes expand
+  0%
+    width: 2px
+    height: 2px
+    top: 49px
+    left: 49px
+    opacity: 0
+
+  20%
+    opacity: 1
+
+  100%
+    width: 100px
+    height: 100px
+    top: 0
+    left: 0
+    opacity: 0.2
+
+/* preloader for first screen */
+
+// LINKS - links styles
+a
+	color: $color-links
+	&:hover
+		color: $color-links
+
+//HEADINGS - headers styles
+@for $i from 1 through 6 
+  h#{$i} 
+    font-size: 30 - $i
+    margin-bottom: 10px
+    padding: 0
+    font-family: $font-headings
+    font-style: italic
+    color: $color-headings
+    a
+    	color: inherit
+  
+
+//ARTICLE - content styles
+article
+	p
+		margin-bottom: 20px
+	ol
+		margin: 0 0 20px 20px
+	ul
+		li
+
+	table
+	  margin-bottom: 30px
+	  width: 100%
+	  table-layout: fixed
+	  th
+	    padding: 10px 20px
+	    background-color: $green
+	    text-align: left
+	    color: black
+	    font-family: $font-table-th
+	    font-style: italic
+	  tr:nth-child(2n+1)
+	    background-color: $light-green
+	  td
+	    padding: 10px 21px 10px 20px
+	    vertical-align: top 
+
+
+

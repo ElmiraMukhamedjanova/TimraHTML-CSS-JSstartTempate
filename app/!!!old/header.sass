@@ -1,0 +1,271 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+
+html
+    font-weight: 300
+
+body
+    background: $color-bg   
+
+.container
+    position: relative
+
+ul
+    margin: 0  
+    padding: 0    
+
+ul li
+    list-style: none
+
+#{$all-text-inputs} 
+  color: #000
+  background-color: $light-green
+  border: none
+  padding: 5px 10px
+  width: 100%
+  margin-bottom: 20px
+  font-family: $font-text-input
+  font-style: italic
+  @include placeholder 
+    color: black;  
+
+#{$all-button-inputs} 
+    font-family: $font-text-input
+    font-style: italic
+    background: $green
+    border: none
+    color: #000
+    padding: 5px 15px
+
+
+
+#{$all-text-inputs-focus}
+    box-shadow: none
+
+#{$all-text-inputs-focus},
+#{$all-text-inputs-hover},
+#{$all-text-inputs-active} 
+  box-shadow: 1 1 1 0 color
+
+
+      
+
+// *****  HEADER *****
+.header_top, footer
+    text-shadow: 0px 1px 1px $shadow
+    color: #fff
+    font-family: $font-thin
+
+.header_top
+    position: fixed
+    top: 0   
+    left: 0
+    right: 0
+    background-color: $green
+    padding: 10px 0
+    z-index: 10
+
+.header_top a, footer a
+    color: #fff      
+
+.header_top, .rounded, .header_menu  
+    @include transition(all 0.3s ease-in-out)      
+
+.wrapper
+    position: relative
+    width: 100%
+
+.logo
+    font-family: $font-bold
+    font-size: 30px
+    text-align: left
+    letter-spacing: 5px
+
+.rounded 
+    display: inline-block
+    background: $shadow
+    width: 50px
+    line-height: 50px
+    text-align: center
+    padding-left: 5px
+    margin: 0 5px 0 0
+ 
+.search
+    position: absolute
+    right: 15px
+    bottom: 5px
+    width: 230px
+    height: 30px
+    background-color: $shadow
+    color: #000
+    
+.search input
+    background-color: transparent
+    border: none
+    padding: 0 5px
+    width: 130px
+    &:active, &:hover, &:focus
+        border: none
+        outline: none
+        box-shadow: none
+    @include placeholder 
+        color: #fff
+    
+.search button
+    position: absolute
+    right: 5px
+    top: 3px
+    font-size: 15px
+    width: 20px
+    // height: 20px
+    font-family: FontAwesome
+    background: none
+    padding: 0
+    color: #fff
+    font-style: normal
+
+.slogan 
+    margin: -15px 0 0 80px
+    font-size: 15px    
+    display: none
+
+.header_menu
+    position: absolute
+    left: 300px
+    right: 300px
+    top: 0px
+    text-transform: uppercase
+    font-weight: 300
+    text-align: center
+    line-height: 50px
+
+.header_menu ul
+    display: inline-block
+    vertical-align: top
+    li
+        display: inline-block
+        vertical-align: top
+        padding-left: 10px
+        &.active
+            text-decoration: underline
+
+.scrolled
+    .rounded
+        width: 35px
+        height: 35px
+    .rounded, .header_menu
+        line-height: 35px
+    .slogan
+        display: none
+    .logo
+        font-size: 25px;             
+
+.lang_sel_list_horizontal
+    position: absolute
+    right: 0
+    top: 15px
+    display: none;
+
+.to_top
+    display: block
+    position: fixed
+    bottom: 15px
+    right: 15px
+    width: 30px;
+    height: 30px
+    line-height: 38px
+    text-align: center
+    background-color: $green  
+    opacity: 0
+    visibility: hidden  
+    color: #fff
+    cursor: pointer
+    @include transition(all 0.3s ease-in-out)
+
+.to_top:hover
+    opacity: 1
+    color: #fff   
+
+.show
+    opacity: 0.4;
+    visibility: visible;
+
+
+#preloader
+  position: absolute
+  left: 50%
+  top: 50%
+  width: 100px
+  height: 100px
+  margin: -50px 0 0 -50px
+  &:before, &:after
+    content: " "
+    border-radius: 50%
+    border: solid 3px #000
+    position: absolute
+    width: 2px
+    height: 2px
+    top: 48px
+    left: 48px
+    opacity: 0
+  &:before
+    -webkit-animation: expand 2s
+    /* Chrome, Safari, Opera */
+    animation: expand 2s
+    -webkit-animation-timing-function: linear
+    -webkit-animation-delay: 0s
+    -webkit-animation-iteration-count: infinite
+    animation-timing-function: linear
+    animation-delay: 0s
+    animation-iteration-count: infinite
+  &:after
+    -webkit-animation: expand 2s
+    /* Chrome, Safari, Opera */
+    animation: expand 2s
+    -webkit-animation-timing-function: linear
+    -webkit-animation-delay: 0s
+    -webkit-animation-iteration-count: infinite
+    animation-timing-function: linear
+    animation-delay: 0s
+    animation-iteration-count: infinite
+    -webkit-animation-delay: 1.5s
+
+.breadcrumbs
+    margin-bottom: 20px
+
+
+.breadcrumbs ul
+    display: table
+
+.breadcrumbs ul li   
+    display: inline-block 
+    vertical-align: top
+
+
+.breadcrumbs ul li:before
+    // font-family: FontAwesome
+    // content: '\f178' 
+    content: '→' 
+    padding: 0 5px 
+    font-size: 15px
+
+.breadcrumbs ul li:first-child:before
+    content: '' 
+    padding-left: 0
+
+.breadcrumbs ul li:first-child
+    padding-left: 0    
+
+.main_container
+    min-height: 400px
+    padding: 20px 0    
+    color: $text-color
+    margin-top: 80px
+    img
+        max-width: 100%;
+        height: auto;
+
+.main_container a
+    // color: $dark-green
+
